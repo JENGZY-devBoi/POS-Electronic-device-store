@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Forms\Home\formHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Home\formHome.Designer.cs">
+      <DependentUpon>formHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Class\Employee Data\empData.cs" />
     <Compile Include="src\Class\DB Config\dbConfig.cs" />
     <Compile Include="src\Forms\Login\formLogin.cs">
@@ -56,6 +62,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="src\Forms\Home\formHome.resx">
+      <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Login\formLogin.resx">
       <DependentUpon>formLogin.cs</DependentUpon>
     </EmbeddedResource>

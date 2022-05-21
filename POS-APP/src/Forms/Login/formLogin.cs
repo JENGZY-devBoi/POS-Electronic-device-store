@@ -15,14 +15,14 @@ namespace POS_APP {
             InitializeComponent();
         }
 
-        private void formLogin_Load(object sender, EventArgs e) {
+        private void btnSignIn_Click(object sender, EventArgs e) {
             try {
                 dbConfig.connection.Open();
 
                 // Fields
                 string sql;
                 var adapter = new SqlDataAdapter();
-                var empTB = new DataTable(); 
+                var empTB = new DataTable();
 
                 sql = "SELECT * FROM Employees";
                 adapter.SelectCommand = new SqlCommand(sql, dbConfig.connection);
@@ -50,8 +50,9 @@ namespace POS_APP {
                         "Warning"
                     );
                 }
-                
-            } catch(Exception ex) {
+
+            }
+            catch (Exception ex) {
                 MessageBox.Show(
                     ex.Message,
                     "Error"

@@ -66,6 +66,7 @@
             this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "sign in";
             this.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // label1
             // 
@@ -105,7 +106,6 @@
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS";
-            this.Load += new System.EventHandler(this.formLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
