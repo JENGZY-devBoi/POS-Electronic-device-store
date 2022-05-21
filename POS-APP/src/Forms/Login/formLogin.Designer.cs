@@ -24,11 +24,11 @@
         /// </summary>
         private void InitializeComponent() {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtUsrename = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUsrename = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,32 +44,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(472, 452);
             this.panel1.TabIndex = 0;
-            // 
-            // txtUsrename
-            // 
-            this.txtUsrename.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsrename.Location = new System.Drawing.Point(92, 159);
-            this.txtUsrename.Name = "txtUsrename";
-            this.txtUsrename.Size = new System.Drawing.Size(305, 31);
-            this.txtUsrename.TabIndex = 0;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(92, 224);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(305, 31);
-            this.txtPassword.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 133);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 23);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "username";
             // 
             // label2
             // 
@@ -93,6 +67,32 @@
             this.btnSignIn.Text = "sign in";
             this.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(88, 133);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "username";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(92, 224);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(305, 31);
+            this.txtPassword.TabIndex = 0;
+            // 
+            // txtUsrename
+            // 
+            this.txtUsrename.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsrename.Location = new System.Drawing.Point(92, 159);
+            this.txtUsrename.Name = "txtUsrename";
+            this.txtUsrename.Size = new System.Drawing.Size(305, 31);
+            this.txtUsrename.TabIndex = 0;
+            // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,6 +103,7 @@
             this.Name = "formLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "POS";
+            this.Load += new System.EventHandler(this.formLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

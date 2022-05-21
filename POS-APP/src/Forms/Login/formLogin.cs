@@ -13,5 +13,10 @@ namespace POS_APP {
         public formLogin() {
             InitializeComponent();
         }
+
+        private void formLogin_Load(object sender, EventArgs e) {
+            dbConfig.connection.Open();
+            dbConfig.connection.Close();
+        }
     }
 }
