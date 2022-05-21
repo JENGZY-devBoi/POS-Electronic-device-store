@@ -84,6 +84,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(305, 31);
             this.txtPassword.TabIndex = 0;
+            this.txtPassword.Text = "123456";
             // 
             // txtUsrename
             // 
@@ -92,6 +93,7 @@
             this.txtUsrename.Name = "txtUsrename";
             this.txtUsrename.Size = new System.Drawing.Size(305, 31);
             this.txtUsrename.TabIndex = 0;
+            this.txtUsrename.Text = "Nancyd";
             // 
             // formLogin
             // 

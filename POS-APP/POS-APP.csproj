@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Class\Employee Data\empData.cs" />
     <Compile Include="src\Class\DB Config\dbConfig.cs" />
     <Compile Include="src\Forms\Login\formLogin.cs">
       <SubType>Form</SubType>
