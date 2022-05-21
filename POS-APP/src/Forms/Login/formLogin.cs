@@ -40,8 +40,12 @@ namespace POS_APP {
                     empData.emp_fname = dr[0]["fname"].ToString();
                     empData.emp_lname = dr[0]["lname"].ToString();
 
-                    // GO TO NEW FORM
+                    dbConfig.connection.Close();
 
+                    // GO TO NEW FORM
+                    var formHome = new formHome();
+                    formHome.Show();
+                    this.Hide();
                 }
                 catch (Exception ex) {
                     // Login failed
