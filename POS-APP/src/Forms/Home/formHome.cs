@@ -21,6 +21,8 @@ namespace POS_APP {
         private List<string> lsProStatus = new List<string>();
         private List<string> lsCategoryID = new List<string>();
         private List<string> lsBrandID = new List<string>();
+        private List<string> lsBrandName = new List<string>();
+        private List<string> lsCategoryName = new List<string>();
         private PictureBox[] arrIMG;
         private Label[] arrProName;
         private Label[] arrProBrand;
@@ -44,6 +46,8 @@ namespace POS_APP {
             init();
             getEmpData();
             fetchProductData();
+            fetchBrandData();
+            fetchCategoryData();
             mapProductData();
         }
 
@@ -123,7 +127,81 @@ namespace POS_APP {
                 arrIMG[i].ImageLocation = lsProImageURL[i];
                 arrProPrice[i].Text = lsSellP[i].ToString("#,#.00");
                 arrProName[i].Text = lsProName[i];
+                arrProBrand[i].Text = lsBrandName[i];
+                arrProCate[i].Text = lsCategoryName[i];
             }
+        }
+
+        private void fetchBrandData() {
+            try {
+                dbConfig.connection.Open();
+
+                //Fields
+                string sql;
+                var adapter = new SqlDataAdapter();
+                var brandTB = new DataTable();
+
+                sql = "SELECT * FROM Brands";
+                adapter.SelectCommand = new SqlCommand(sql, dbConfig.connection);
+                adapter.Fill(brandTB);
+
+                foreach (var itm in lsBrandID) {
+                    sql = $"brand_id='{itm}'";
+                    try {
+                        DataRow[] dr = brandTB.Select(sql);
+                        foreach (var el in dr) lsBrandName.Add(el["brand_name"].ToString());
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show(
+                            ex.Message,
+                            "Error"
+                        );
+                    }
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error"
+                );
+            }
+            dbConfig.connection.Close();
+        }
+
+        private void fetchCategoryData() {
+            try {
+                dbConfig.connection.Open();
+
+                //Fields
+                string sql;
+                var adapter = new SqlDataAdapter();
+                var cateTB = new DataTable();
+
+                sql = "SELECT * FROM Categorys";
+                adapter.SelectCommand = new SqlCommand(sql, dbConfig.connection);
+                adapter.Fill(cateTB);
+
+                foreach (var itm in lsCategoryID) {
+                    sql = $"category_id='{itm}'";
+                    try {
+                        DataRow[] dr = cateTB.Select(sql);
+                        foreach (var el in dr) lsCategoryName.Add(el["category_name"].ToString());
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show(
+                            ex.Message,
+                            "Error"
+                        );
+                    }
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error"
+                );
+            }
+            dbConfig.connection.Close();
         }
     }
 }
