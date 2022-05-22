@@ -86,6 +86,10 @@
             this.btnBack = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Label();
             this.lblPage = new System.Windows.Forms.Label();
+            this.lblProduct = new System.Windows.Forms.Label();
+            this.btnSelectAll = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -401,6 +405,7 @@
             this.proAdd4.Name = "proAdd4";
             this.proAdd4.Size = new System.Drawing.Size(51, 34);
             this.proAdd4.TabIndex = 3;
+            this.proAdd4.Tag = "3";
             this.proAdd4.Text = "+";
             this.proAdd4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.proAdd4.Click += new System.EventHandler(this.proAdd4_Click);
@@ -820,7 +825,7 @@
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(972, 447);
+            this.btnBack.Location = new System.Drawing.Point(278, 447);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(31, 34);
             this.btnBack.TabIndex = 2;
@@ -833,7 +838,7 @@
             this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.Location = new System.Drawing.Point(1044, 447);
+            this.btnNext.Location = new System.Drawing.Point(350, 447);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(31, 34);
             this.btnNext.TabIndex = 2;
@@ -845,12 +850,62 @@
             // 
             this.lblPage.AutoSize = true;
             this.lblPage.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPage.Location = new System.Drawing.Point(1015, 450);
+            this.lblPage.Location = new System.Drawing.Point(321, 450);
             this.lblPage.Name = "lblPage";
             this.lblPage.Size = new System.Drawing.Size(17, 28);
             this.lblPage.TabIndex = 2;
             this.lblPage.Text = "1";
             this.lblPage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(283, 20);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(144, 36);
+            this.lblProduct.TabIndex = 2;
+            this.lblProduct.Text = "Product(---)";
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnSelectAll
+            // 
+            this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectAll.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelectAll.Location = new System.Drawing.Point(913, 22);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(142, 34);
+            this.btnSelectAll.TabIndex = 2;
+            this.btnSelectAll.Text = "SELECT ALL";
+            this.btnSelectAll.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.Gray;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(1066, 22);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(82, 34);
+            this.btnClear.TabIndex = 2;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirm.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirm.Location = new System.Drawing.Point(913, 450);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(223, 34);
+            this.btnConfirm.TabIndex = 2;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // formHome
             // 
@@ -861,6 +916,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblProduct);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnBack);
@@ -960,5 +1019,9 @@
         private System.Windows.Forms.Label btnBack;
         private System.Windows.Forms.Label btnNext;
         private System.Windows.Forms.Label lblPage;
+        private System.Windows.Forms.Label lblProduct;
+        private System.Windows.Forms.Label btnSelectAll;
+        private System.Windows.Forms.Label btnClear;
+        private System.Windows.Forms.Label btnConfirm;
     }
 }

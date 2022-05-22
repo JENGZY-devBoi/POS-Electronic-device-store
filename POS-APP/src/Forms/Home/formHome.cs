@@ -51,6 +51,7 @@ namespace POS_APP {
             fetchBrandData();
             fetchCategoryData();
             mapProductData();
+            lblProduct.Text = "Product( " + lsProID.Count + " )";
         }
 
         private void getEmpData() {
@@ -266,13 +267,16 @@ namespace POS_APP {
             addLbl(proAdd3);
         }
 
+
         private void proAdd4_Click(object sender, EventArgs e) {
             addLbl(proAdd4);
         }
 
+
         private void proAdd5_Click(object sender, EventArgs e) {
             addLbl(proAdd5);
         }
+
 
         private void btnNext_Click(object sender, EventArgs e) {
             if (end <= lsProImageURL.Count) {
@@ -319,6 +323,46 @@ namespace POS_APP {
                 );
             }
             dbConfig.connection.Close();
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e) {
+            for (int i = 0; i < arrAmount.Length; i++) {
+                if (arrAmount[i] == 0) arrAmount[i] = 1;
+            }
+            mapProductData();
+        }
+        private void btnClear_Click(object sender, EventArgs e) {
+            for (int i = 0; i < arrAmount.Length; i++) {
+                if (arrAmount[i] != 0) arrAmount[i] = 0;
+            }
+            mapProductData();
+        }
+        private void btnConfirm_Click(object sender, EventArgs e) {
+            int i = 0;
+            bool unselected = true;
+            foreach (var itm in arrAmount) {
+                if (itm > 0) {
+                    unselected = false;
+
+                    // Update to DB
+                    productData.proID.Add(lsProID[i]);
+                    productData.proAmount.Add(lsProAmount[i] - itm);
+
+                    // Next form
+                    productData.proName.Add(lsProName[i]);
+                    productData.amount.Add(itm);
+                }
+                i++;
+            }
+
+            if (unselected) {
+                MessageBox.Show(
+                    "Please select item!",
+                    "Warning"
+                );
+            } else {
+                // GO TO NEW FORM
+            }
         }
     }
 }
