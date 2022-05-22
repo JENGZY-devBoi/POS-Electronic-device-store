@@ -291,9 +291,10 @@
             this.proAdd5.Location = new System.Drawing.Point(777, 35);
             this.proAdd5.Name = "proAdd5";
             this.proAdd5.Size = new System.Drawing.Size(51, 34);
-            this.proAdd5.TabIndex = 2;
+            this.proAdd5.TabIndex = 4;
             this.proAdd5.Text = "+";
             this.proAdd5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.proAdd5.Click += new System.EventHandler(this.proAdd5_Click);
             // 
             // proDel5
             // 
@@ -399,9 +400,10 @@
             this.proAdd4.Location = new System.Drawing.Point(777, 35);
             this.proAdd4.Name = "proAdd4";
             this.proAdd4.Size = new System.Drawing.Size(51, 34);
-            this.proAdd4.TabIndex = 2;
+            this.proAdd4.TabIndex = 3;
             this.proAdd4.Text = "+";
             this.proAdd4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.proAdd4.Click += new System.EventHandler(this.proAdd4_Click);
             // 
             // proDel4
             // 
@@ -508,8 +510,10 @@
             this.proAdd3.Name = "proAdd3";
             this.proAdd3.Size = new System.Drawing.Size(51, 34);
             this.proAdd3.TabIndex = 2;
+            this.proAdd3.Tag = "2";
             this.proAdd3.Text = "+";
             this.proAdd3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.proAdd3.Click += new System.EventHandler(this.proAdd3_Click);
             // 
             // proDel3
             // 
@@ -616,8 +620,10 @@
             this.proAdd2.Name = "proAdd2";
             this.proAdd2.Size = new System.Drawing.Size(51, 34);
             this.proAdd2.TabIndex = 2;
+            this.proAdd2.Tag = "1";
             this.proAdd2.Text = "+";
             this.proAdd2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.proAdd2.Click += new System.EventHandler(this.proAdd2_Click);
             // 
             // proDel2
             // 
@@ -724,8 +730,10 @@
             this.proAdd1.Name = "proAdd1";
             this.proAdd1.Size = new System.Drawing.Size(51, 34);
             this.proAdd1.TabIndex = 2;
+            this.proAdd1.Tag = "0";
             this.proAdd1.Text = "+";
             this.proAdd1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.proAdd1.Click += new System.EventHandler(this.proAdd1_Click);
             // 
             // proDel1
             // 

@@ -30,7 +30,8 @@ namespace POS_APP {
         private Label[] arrProCate;
         private Label[] arrProPrice;
         private Label[] arrProAmount;
-        private int start = 0, end = 5, st = 0;
+        private int[] arrAmount;
+        private int start = 0, end = 5, st = 0, amount_start = 0, amount_end = 5;
         #endregion
 
         public formHome() {
@@ -85,6 +86,8 @@ namespace POS_APP {
                         lsBrandID.Add(itm["brand_id"].ToString());
                     }
 
+                    arrAmount = new int[lsProID.Count];
+
                 } catch (Exception ex) {
                     MessageBox.Show(
                         ex.Message,
@@ -128,6 +131,7 @@ namespace POS_APP {
 
         private void mapProductData() {
             st = start;
+            int num = 5;
             if (st < lsProImageURL.Count) { 
                 for(int i = 0; i < 5; i++) {
                     // Clear
@@ -139,8 +143,15 @@ namespace POS_APP {
                         arrProName[i].Text = lsProName[st];
                         arrProBrand[i].Text = lsBrandName[st];
                         arrProCate[i].Text = lsCategoryName[st];
+                        num--;
                     }
                     st++;
+                }
+
+                int j = 0;
+                for (int i = amount_start; i < amount_end - num; i++) {
+                    arrProAmount[j].Text = arrAmount[i].ToString();
+                    j++;
                 }
             }
         }
@@ -182,28 +193,39 @@ namespace POS_APP {
         }
 
         private void proDel1_Click(object sender, EventArgs e) {
-            int idx = convertIndex(proDel1);
-
+            delLbl(proDel1);
         }
 
         private void proDel2_Click(object sender, EventArgs e) {
-            
+            delLbl(proDel2);
         }
 
         private void proDel3_Click(object sender, EventArgs e) {
-
+            delLbl(proDel3);
         }
 
         private void proDel4_Click(object sender, EventArgs e) {
-
+            delLbl(proDel4);
         }
 
         private void proDel5_Click(object sender, EventArgs e) {
-
+            delLbl(proDel5);
         }
 
-        private void delClicked(Label lbl) {
-            
+        private void delAmount(int idx) {
+            if (Convert.ToInt32(arrProAmount[idx].Text) > 0) {
+                int i = amount_start + idx;
+                arrProAmount[idx].Text = (Convert.ToInt32(arrProAmount[idx].Text) - 1) + "";
+                arrAmount[i] = (Convert.ToInt32(arrProAmount[idx].Text));
+            }
+        }
+
+        private void addAmount(int idx) {
+            if (Convert.ToInt32(arrProAmount[idx].Text) < lsProAmount[idx]) {
+                int i = amount_start + idx;
+                arrProAmount[idx].Text = (Convert.ToInt32(arrProAmount[idx].Text) + 1) + "";
+                arrAmount[i] = (Convert.ToInt32(arrProAmount[idx].Text));
+            }
         }
 
         private int convertIndex(Label lbl) {
@@ -216,8 +238,40 @@ namespace POS_APP {
                 lblPage.Text = (Convert.ToInt32(lblPage.Text) - 1) + "";
                 start -= 5;
                 end -= 5;
+                amount_start -= 5;
+                amount_end -= 5;
                 mapProductData();
             }
+        }
+
+        private void delLbl(Label lbl) {
+            int idx = convertIndex(lbl);
+            delAmount(idx);
+        }
+
+        private void addLbl(Label lbl) {
+            int idx = convertIndex(lbl);
+            addAmount(idx);
+        }
+
+        private void proAdd1_Click(object sender, EventArgs e) {
+            addLbl(proAdd1);
+        }
+
+        private void proAdd2_Click(object sender, EventArgs e) {
+            addLbl(proAdd2);
+        }
+
+        private void proAdd3_Click(object sender, EventArgs e) {
+            addLbl(proAdd3);
+        }
+
+        private void proAdd4_Click(object sender, EventArgs e) {
+            addLbl(proAdd4);
+        }
+
+        private void proAdd5_Click(object sender, EventArgs e) {
+            addLbl(proAdd5);
         }
 
         private void btnNext_Click(object sender, EventArgs e) {
@@ -225,6 +279,8 @@ namespace POS_APP {
                 lblPage.Text = (Convert.ToInt32(lblPage.Text) + 1) + "";
                 start += 5;
                 end += 5;
+                amount_start += 5;
+                amount_end += 5;
                 mapProductData();
             }
         }
