@@ -23,13 +23,14 @@ namespace POS_APP {
         private List<string> lsBrandID = new List<string>();
         private List<string> lsBrandName = new List<string>();
         private List<string> lsCategoryName = new List<string>();
+        private Panel[] panelList;
         private PictureBox[] arrIMG;
         private Label[] arrProName;
         private Label[] arrProBrand;
         private Label[] arrProCate;
         private Label[] arrProPrice;
         private Label[] arrProAmount;
-        private int start = 0, end = 5;
+        private int start = 0, end = 5, st = 0;
         #endregion
 
         public formHome() {
@@ -120,15 +121,27 @@ namespace POS_APP {
             arrProPrice = new Label[5] {
                 proPrice1, proPrice2, proPrice3, proPrice4, proPrice5
             };
+            panelList = new Panel[5] {
+                panelList1, panelList2, panelList3, panelList4, panelList5
+            };
         }
 
         private void mapProductData() {
-            for(int i = start; i < end; i++) {
-                arrIMG[i].ImageLocation = lsProImageURL[i];
-                arrProPrice[i].Text = lsSellP[i].ToString("#,#.00");
-                arrProName[i].Text = lsProName[i];
-                arrProBrand[i].Text = lsBrandName[i];
-                arrProCate[i].Text = lsCategoryName[i];
+            st = start;
+            if (st < lsProImageURL.Count) { 
+                for(int i = 0; i < 5; i++) {
+                    // Clear
+                    panelList[i].Visible = false;
+                    if (st < lsProImageURL.Count) {
+                        panelList[i].Visible = true;
+                        arrIMG[i].ImageLocation = lsProImageURL[st];
+                        arrProPrice[i].Text = lsSellP[st].ToString("#,#.00");
+                        arrProName[i].Text = lsProName[st];
+                        arrProBrand[i].Text = lsBrandName[st];
+                        arrProCate[i].Text = lsCategoryName[st];
+                    }
+                    st++;
+                }
             }
         }
 
@@ -166,6 +179,54 @@ namespace POS_APP {
                 );
             }
             dbConfig.connection.Close();
+        }
+
+        private void proDel1_Click(object sender, EventArgs e) {
+            int idx = convertIndex(proDel1);
+
+        }
+
+        private void proDel2_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void proDel3_Click(object sender, EventArgs e) {
+
+        }
+
+        private void proDel4_Click(object sender, EventArgs e) {
+
+        }
+
+        private void proDel5_Click(object sender, EventArgs e) {
+
+        }
+
+        private void delClicked(Label lbl) {
+            
+        }
+
+        private int convertIndex(Label lbl) {
+            int idx = Convert.ToInt32(lbl.Tag.ToString());
+            return idx;
+        }
+
+        private void btnBack_Click(object sender, EventArgs e) {
+            if (start != 0) {
+                lblPage.Text = (Convert.ToInt32(lblPage.Text) - 1) + "";
+                start -= 5;
+                end -= 5;
+                mapProductData();
+            }
+        }
+
+        private void btnNext_Click(object sender, EventArgs e) {
+            if (end <= lsProImageURL.Count) {
+                lblPage.Text = (Convert.ToInt32(lblPage.Text) + 1) + "";
+                start += 5;
+                end += 5;
+                mapProductData();
+            }
         }
 
         private void fetchCategoryData() {
