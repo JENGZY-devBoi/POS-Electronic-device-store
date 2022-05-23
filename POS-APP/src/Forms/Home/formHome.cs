@@ -45,9 +45,9 @@ namespace POS_APP {
         }
 
         private void formHome_Load(object sender, EventArgs e) {
-            init();
             getEmpData();
             fetchProductData();
+            init();
             fetchBrandData();
             fetchCategoryData();
             mapProductData();
@@ -128,6 +128,14 @@ namespace POS_APP {
             panelList = new Panel[5] {
                 panelList1, panelList2, panelList3, panelList4, panelList5
             };
+
+            if (productData.proName != null) {
+                int i = 0;
+                foreach (var itm in productData.amountBack) {
+                    arrAmount[i] = itm;
+                    i++;
+                }
+            }
         }
 
         private void mapProductData() {
@@ -338,6 +346,13 @@ namespace POS_APP {
             mapProductData();
         }
         private void btnConfirm_Click(object sender, EventArgs e) {
+            // CLEAR
+            productData.proID.Clear();
+            productData.proName.Clear();
+            productData.amountBack.Clear();
+            productData.proAmount.Clear();
+            productData.proPrice.Clear();
+
             int i = 0;
             bool unselected = true;
             foreach (var itm in arrAmount) {
@@ -348,9 +363,13 @@ namespace POS_APP {
                     productData.proID.Add(lsProID[i]);
                     productData.proAmount.Add(lsProAmount[i] - itm);
 
+                    // Backup for rollback
+                    productData.amountBack.Add(itm);
+
                     // Next form
                     productData.proName.Add(lsProName[i]);
                     productData.amount.Add(itm);
+                    productData.proPrice.Add(lsSellP[i]);
                 }
                 i++;
             }
@@ -362,6 +381,9 @@ namespace POS_APP {
                 );
             } else {
                 // GO TO NEW FORM
+                var formProductDetail = new formProductDetail();
+                formProductDetail.Show();
+                this.Hide();
             }
         }
     }
