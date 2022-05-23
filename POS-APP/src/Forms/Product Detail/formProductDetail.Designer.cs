@@ -42,8 +42,26 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.lblProName = new System.Windows.Forms.Label();
+            this.lblProAmount = new System.Windows.Forms.Label();
+            this.lblProPrice = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtChange = new System.Windows.Forms.TextBox();
+            this.btnCalcTotal = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnConfirm
@@ -51,12 +69,13 @@
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirm.Location = new System.Drawing.Point(772, 467);
+            this.btnConfirm.Location = new System.Drawing.Point(889, 467);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(372, 34);
+            this.btnConfirm.Size = new System.Drawing.Size(276, 34);
             this.btnConfirm.TabIndex = 14;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // panel1
             // 
@@ -175,25 +194,25 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(140, 27);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Menu";
+            this.label4.Text = "Product detail";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label5.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(772, 88);
+            this.label5.Location = new System.Drawing.Point(889, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 27);
             this.label5.TabIndex = 2;
-            this.label5.Text = "Product detail";
+            this.label5.Text = "Total detail";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label6.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(771, 224);
+            this.label6.Location = new System.Drawing.Point(888, 224);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(140, 27);
             this.label6.TabIndex = 2;
@@ -204,27 +223,42 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.lblProPrice);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblProAmount);
+            this.panel3.Controls.Add(this.lblProName);
             this.panel3.Location = new System.Drawing.Point(290, 118);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(467, 383);
+            this.panel3.Size = new System.Drawing.Size(592, 383);
             this.panel3.TabIndex = 17;
             // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(772, 118);
+            this.panel4.Controls.Add(this.lblTotalAmount);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.lblTotalPrice);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Location = new System.Drawing.Point(889, 118);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(368, 84);
+            this.panel4.Size = new System.Drawing.Size(272, 84);
             this.panel4.TabIndex = 17;
             // 
             // panel5
             // 
             this.panel5.AutoScroll = true;
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(772, 254);
+            this.panel5.Controls.Add(this.txtChange);
+            this.panel5.Controls.Add(this.txtAmount);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.btnCalcTotal);
+            this.panel5.Location = new System.Drawing.Point(889, 254);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(368, 199);
+            this.panel5.Size = new System.Drawing.Size(272, 199);
             this.panel5.TabIndex = 17;
             // 
             // btnBack
@@ -250,6 +284,168 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Menu";
             // 
+            // lblProName
+            // 
+            this.lblProName.AutoSize = true;
+            this.lblProName.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProName.Location = new System.Drawing.Point(3, 34);
+            this.lblProName.Name = "lblProName";
+            this.lblProName.Size = new System.Drawing.Size(112, 25);
+            this.lblProName.TabIndex = 18;
+            this.lblProName.Text = "product name";
+            this.lblProName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblProAmount
+            // 
+            this.lblProAmount.AutoSize = true;
+            this.lblProAmount.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProAmount.Location = new System.Drawing.Point(432, 34);
+            this.lblProAmount.Name = "lblProAmount";
+            this.lblProAmount.Size = new System.Drawing.Size(16, 25);
+            this.lblProAmount.TabIndex = 18;
+            this.lblProAmount.Text = "1";
+            this.lblProAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblProPrice
+            // 
+            this.lblProPrice.AutoSize = true;
+            this.lblProPrice.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProPrice.Location = new System.Drawing.Point(496, 35);
+            this.lblProPrice.Name = "lblProPrice";
+            this.lblProPrice.Size = new System.Drawing.Size(47, 25);
+            this.lblProPrice.TabIndex = 18;
+            this.lblProPrice.Text = "price";
+            this.lblProPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label1.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 31);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "product name";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label8.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(370, 2);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 31);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "amount";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label9.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(465, 2);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 31);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "price(unit)";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 47);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(76, 27);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Total";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(4, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(140, 27);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "product amount";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblTotalAmount
+            // 
+            this.lblTotalAmount.BackColor = System.Drawing.Color.White;
+            this.lblTotalAmount.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalAmount.Location = new System.Drawing.Point(150, 13);
+            this.lblTotalAmount.Name = "lblTotalAmount";
+            this.lblTotalAmount.Size = new System.Drawing.Size(106, 27);
+            this.lblTotalAmount.TabIndex = 2;
+            this.lblTotalAmount.Text = "10";
+            this.lblTotalAmount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTotalPrice
+            // 
+            this.lblTotalPrice.BackColor = System.Drawing.Color.White;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Location = new System.Drawing.Point(85, 47);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(171, 27);
+            this.lblTotalPrice.TabIndex = 2;
+            this.lblTotalPrice.Text = "1000.00";
+            this.lblTotalPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAmount.Location = new System.Drawing.Point(91, 20);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(165, 31);
+            this.txtAmount.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 24);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 27);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Amount";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(9, 68);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 27);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Change";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtChange
+            // 
+            this.txtChange.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChange.Location = new System.Drawing.Point(91, 64);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.ReadOnly = true;
+            this.txtChange.Size = new System.Drawing.Size(165, 31);
+            this.txtChange.TabIndex = 0;
+            // 
+            // btnCalcTotal
+            // 
+            this.btnCalcTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnCalcTotal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCalcTotal.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalcTotal.Location = new System.Drawing.Point(91, 125);
+            this.btnCalcTotal.Name = "btnCalcTotal";
+            this.btnCalcTotal.Size = new System.Drawing.Size(165, 34);
+            this.btnCalcTotal.TabIndex = 14;
+            this.btnCalcTotal.Text = "Calculate";
+            this.btnCalcTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCalcTotal.Click += new System.EventHandler(this.btnCalcTotal_Click);
+            // 
             // formProductDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,9 +464,15 @@
             this.Name = "formProductDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formProductDetail";
+            this.Load += new System.EventHandler(this.formProductDetail_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -296,5 +498,20 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label btnBack;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblProName;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblProPrice;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblProAmount;
+        private System.Windows.Forms.Label lblTotalAmount;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtChange;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label btnCalcTotal;
     }
 }
