@@ -10,16 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace POS_APP {
-    public partial class formCash : Form {
+    public partial class formBankTransfer : Form {
         double totalPrice;
-        bool canBuy = false;
-        string pay = "Pay by Cash";
-
-        public formCash() {
+        string pay = "Pay by Bank transfer";
+        public formBankTransfer() {
             InitializeComponent();
         }
 
-        private void formCash_Load(object sender, EventArgs e) {
+        private void formBankTransfer_Load(object sender, EventArgs e) {
             showTotalDetail();
         }
 
@@ -35,45 +33,27 @@ namespace POS_APP {
         }
 
         private void btnBack_Click(object sender, EventArgs e) {
+            memberData.clearData();
+
             var form = new formPayment();
             form.Show();
             this.Hide();
         }
 
-        private void btnCalcTotal_Click(object sender, EventArgs e) {
-            double amount = Convert.ToDouble(txtAmount.Text);
-
-            double change = amount - totalPrice;
-
-            // change cannot negative number
-            if (change >= 0) {
-                txtChange.Text = change.ToString("#,#.00");
-                canBuy = true;
-            }
-            else {
-                MessageBox.Show(
-                    "Money not enough!",
-                    "Warning"
-                );
-            }
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e) {
-            if (canBuy) {
-                putProductDB();
-                postReq();
+            putProductDB();
+            postReq();
 
-                // Clear
-                memberData.clearData();
-                productData.clearData();
+            // Clear
+            memberData.clearData();
+            productData.clearData();
 
-                MessageBox.Show("Purchase success", "Notification");
+            MessageBox.Show("Purchase success", "Notification");
 
-                // Go to Home form
-                var form = new formHome();
-                form.Show();
-                this.Hide();
-            }
+            // Go to Home form
+            var form = new formHome();
+            form.Show();
+            this.Hide();
         }
 
         private void putProductDB() {
@@ -109,7 +89,7 @@ namespace POS_APP {
             string member_id = (member) ? $"'{memberData.id_pur}'," : "";
 
             dbConfig.connection.Open();
-           
+
             try {
                 for (int i = 0; i < productData.proName.Count; i++) {
                     var adapter = new SqlDataAdapter();
@@ -146,6 +126,5 @@ namespace POS_APP {
             }
             dbConfig.connection.Close();
         }
-
     }
 }

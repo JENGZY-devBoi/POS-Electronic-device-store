@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formBankTransfer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formBankTransfer.Designer.cs">
+      <DependentUpon>formBankTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\Debit Mastercard\formDebit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Debit Mastercard\formDebit.Designer.cs">
+      <DependentUpon>formDebit.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\Cash\formCash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,8 +94,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formBankTransfer.resx">
+      <DependentUpon>formBankTransfer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Cash\formCash.resx">
       <DependentUpon>formCash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\Debit Mastercard\formDebit.resx">
+      <DependentUpon>formDebit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Home\formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
@@ -118,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\Forms\BankTransfer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

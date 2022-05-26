@@ -20,6 +20,8 @@ namespace POS_APP {
             proName.Clear();
             amountBack.Clear();
             proAmount.Clear();
+            amountBack.Clear();
+            amount.Clear();
             proPrice.Clear();
         }
     }

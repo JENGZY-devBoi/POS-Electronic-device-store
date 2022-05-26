@@ -79,11 +79,15 @@ namespace POS_APP {
         }
 
         private void btnMastercard_Click(object sender, EventArgs e) {
-
+            var form = new formDebit();
+            form.Show();
+            this.Hide();
         }
 
         private void btnTransfer_Click(object sender, EventArgs e) {
-
+            var form = new formBankTransfer();
+            form.Show();
+            this.Hide();
         }
     }
 }
