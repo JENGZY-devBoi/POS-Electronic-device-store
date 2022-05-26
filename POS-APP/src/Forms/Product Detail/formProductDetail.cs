@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace POS_APP {
     public partial class formProductDetail : Form {
         private double totalPrice;
-        private bool canBuy = false;
         public formProductDetail() {
             InitializeComponent();
         }
@@ -55,36 +55,37 @@ namespace POS_APP {
             for (int i = 0; i < productData.proName.Count; i++) {
                 totalPrice += productData.amount[i] * productData.proPrice[i];
             }
-            
+            productData.totalPrice = totalPrice;
             lblTotalPrice.Text = totalPrice.ToString("#,#.00");
         }
 
-        private void btnCalcTotal_Click(object sender, EventArgs e) {
-            double amount = Convert.ToDouble(txtAmount.Text);
+        //private void btnCalcTotal_Click(object sender, EventArgs e) {
+        //    double amount = Convert.ToDouble(txtAmount.Text);
 
-            double change = amount - totalPrice;
+        //    double change = amount - totalPrice;
             
-            // change cannot negative number
-            if (change >= 0) {
-                txtChange.Text = change.ToString("#,#.00");
-                canBuy = true;
-            } else {
-                MessageBox.Show(
-                    "Money not enough!",
-                    "Warning"
-                );
-            }
-        }
+        //    // change cannot negative number
+        //    if (change >= 0) {
+        //        txtChange.Text = change.ToString("#,#.00");
+        //        canBuy = true;
+        //    } else {
+        //        MessageBox.Show(
+        //            "Money not enough!",
+        //            "Warning"
+        //        );
+        //    }
+        //}
 
         private void btnConfirm_Click(object sender, EventArgs e) {
-            if (canBuy) {
-                MessageBox.Show(
-                    "Purchase success!",
-                    "Notify"
-                );
-
                 // GO TO NEW FORM
-            }
+                var form = new formPayment();
+                form.Show();
+                this.Hide();
         }
+
+        //private void txtAmount_KeyPress(object sender, KeyPressEventArgs e) {
+        //    e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        //}
+       
     }
 }

@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Class\Member Data\memberData.cs" />
+    <Compile Include="src\Forms\Payments\formPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Payments\formPayment.Designer.cs">
+      <DependentUpon>formPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\Product Detail\formProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\Forms\Payments\formPayment.resx">
+      <DependentUpon>formPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Product Detail\formProductDetail.resx">
       <DependentUpon>formProductDetail.cs</DependentUpon>
     </EmbeddedResource>

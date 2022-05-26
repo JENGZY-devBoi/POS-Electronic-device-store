@@ -120,9 +120,9 @@
             // 
             // btnMemManage
             // 
-            this.btnMemManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnMemManage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnMemManage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMemManage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMemManage.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMemManage.Location = new System.Drawing.Point(14, 123);
             this.btnMemManage.Name = "btnMemManage";
             this.btnMemManage.Size = new System.Drawing.Size(224, 34);
@@ -132,9 +132,9 @@
             // 
             // btnProPOS
             // 
-            this.btnProPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnProPOS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.btnProPOS.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProPOS.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProPOS.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProPOS.Location = new System.Drawing.Point(14, 74);
             this.btnProPOS.Name = "btnProPOS";
             this.btnProPOS.Size = new System.Drawing.Size(224, 34);
