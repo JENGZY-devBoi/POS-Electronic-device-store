@@ -346,12 +346,7 @@ namespace POS_APP {
             mapProductData();
         }
         private void btnConfirm_Click(object sender, EventArgs e) {
-            // CLEAR
-            productData.proID.Clear();
-            productData.proName.Clear();
-            productData.amountBack.Clear();
-            productData.proAmount.Clear();
-            productData.proPrice.Clear();
+            productData.clearData();
 
             int i = 0;
             bool unselected = true;

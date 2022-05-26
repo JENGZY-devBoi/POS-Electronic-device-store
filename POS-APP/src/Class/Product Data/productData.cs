@@ -13,5 +13,14 @@ namespace POS_APP {
         public static List<string> proName = new List<string>();
         public static List<double> proPrice = new List<double>();
         public static double totalPrice;
+
+        public static void clearData() {
+            // CLEAR
+            proID.Clear();
+            proName.Clear();
+            amountBack.Clear();
+            proAmount.Clear();
+            proPrice.Clear();
+        }
     }
 }

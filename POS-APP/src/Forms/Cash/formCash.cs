@@ -63,9 +63,13 @@ namespace POS_APP {
                 putProductDB();
                 postReq();
 
+                // Clear
+                memberData.clearData();
+                productData.clearData();
+
                 MessageBox.Show("Purchase success", "Notification");
 
-                // Go to home form
+                // Go to Home form
                 var form = new formHome();
                 form.Show();
                 this.Hide();
@@ -94,86 +98,55 @@ namespace POS_APP {
         }
 
         private void postReq() {
+            // Date now when payment
             DateTime dt = new DateTime();
             dt = DateTime.Now;
             string dateNow = dt.ToString().Split()[0];
 
+            // Check used memeber with phone
+            bool member = memberData.id_pur != null;
+            string member_col = (member) ? "member_id," : "";
+            string member_id = (member) ? $"'{memberData.id_pur}'," : "";
+
             dbConfig.connection.Open();
-            
-            if (memberData.id_pur != null) {
-                try {
-                    for (int i = 0; i < productData.proName.Count; i++) {
-                        var adapter = new SqlDataAdapter();
-                        string sql =
-                            $"INSERT INTO RequestProduct " +
-                            $"(product_id, " +
-                            $"req_amount," +
-                            $"member_id, " +
-                            $"req_price, " +
-                            $"req_date," +
-                            $"req_status," +
-                            $"payment_method, " +
-                            $"payment_status, " +
-                            $"payment_date) " +
-                            $"VALUES" +
-                            $"(" +
-                            $"'{productData.proID[i]}'," +
-                            $"'{productData.amount[i]}'," +
-                            $"'{memberData.id_pur}'," +
-                            $"'{productData.proPrice[i] * productData.amount[i]}'," +
-                            $"'{dateNow}', 'YES'," +
-                            $"'{pay}'," +
-                            $"'Y'," +
-                            $"'{dateNow}'" +
-                            $"" +
-                            $")";
+           
+            try {
+                for (int i = 0; i < productData.proName.Count; i++) {
+                    var adapter = new SqlDataAdapter();
+                    string sql =
+                        $"INSERT INTO RequestProduct " +
+                        $"(product_id," +
+                        $"req_amount," +
+                        $"{member_col}" +
+                        $"req_price," +
+                        $"req_date," +
+                        $"req_status," +
+                        $"payment_method, " +
+                        $"payment_status, " +
+                        $"payment_date) " +
+                        $"VALUES(" +
+                        $"'{productData.proID[i]}'," +
+                        $"'{productData.amount[i]}'," +
+                        $"{member_id}" +
+                        $"'{productData.proPrice[i] * productData.amount[i]}'," +
+                        $"'{dateNow}'," +
+                        $"'YES'," +
+                        $"'{pay}'," +
+                        $"'YES'," +
+                        $"'{dateNow}'" +
+                        $")";
 
-                        adapter.InsertCommand = dbConfig.connection.CreateCommand();
-                        adapter.InsertCommand.CommandText = sql;
-                        adapter.InsertCommand.ExecuteNonQuery();
-                    }
+                    adapter.InsertCommand = dbConfig.connection.CreateCommand();
+                    adapter.InsertCommand.CommandText = sql;
+                    adapter.InsertCommand.ExecuteNonQuery();
                 }
-                catch (Exception ex) {
-                    Console.WriteLine(ex.Message);
-                }
-                dbConfig.connection.Close();
-            }else {
-                try {
-                    for (int i = 0; i < productData.proName.Count; i++) {
-                        var adapter = new SqlDataAdapter();
-                        string sql =
-                            $"INSERT INTO RequestProduct " +
-                            $"(product_id, " +
-                            $"req_amount," +
-                            $"req_price, " +
-                            $"req_date," +
-                            $"req_status," +
-                            $"payment_method," +
-                            $"payment_status," +
-                            $"payment_date) " +
-                            $"VALUES" +
-                            $"(" +
-                            $"'{productData.proID[i]}'," +
-                            $"'{productData.amount[i]}'," +
-                            $"'{productData.proPrice[i] * productData.amount[i]}'," +
-                            $"'{dateNow}', " +
-                            $"'YES'," +
-                            $"'{pay}'," +
-                            $"'Y'," +
-                            $"'{dateNow}'" +
-                            $")";
-
-                        adapter.InsertCommand = dbConfig.connection.CreateCommand();
-                        adapter.InsertCommand.CommandText = sql;
-                        adapter.InsertCommand.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex) {
-                    Console.WriteLine(ex.Message);
-                }
-                dbConfig.connection.Close();
             }
-
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+            }
+            dbConfig.connection.Close();
         }
+
     }
 }
+

@@ -296,6 +296,7 @@
             this.proAdd5.Name = "proAdd5";
             this.proAdd5.Size = new System.Drawing.Size(51, 34);
             this.proAdd5.TabIndex = 4;
+            this.proAdd5.Tag = "4";
             this.proAdd5.Text = "+";
             this.proAdd5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.proAdd5.Click += new System.EventHandler(this.proAdd5_Click);

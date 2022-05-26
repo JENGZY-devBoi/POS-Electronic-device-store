@@ -13,5 +13,15 @@ namespace POS_APP {
         public static string email;
         public static string address;
         public static string status;
+
+        public static void clearData() {
+            id_pur = null;
+            id = null;
+            fname = null;
+            lname = null;
+            email = null;
+            address = null;
+            status = null;
+        }
     }
 }
