@@ -30,84 +30,7 @@ namespace POS_APP {
             productData.totalPrice = totalPrice;
             lblTotalPrice.Text = totalPrice.ToString("#,#.00");
         }
-
-        private void putProductDB() {
-            dbConfig.connection.Open();
-            try {
-                for (int i = 0; i < productData.proName.Count; i++) {
-                    var adapter = new SqlDataAdapter();
-
-                    string sql =
-                        $"UPDATE Products " +
-                        $"SET amount = '{productData.proAmount[i]}' " +
-                        $"WHERE product_id = '{productData.proID[i]}'";
-                    adapter.UpdateCommand = dbConfig.connection.CreateCommand();
-                    adapter.UpdateCommand.CommandText = sql;
-                    adapter.UpdateCommand.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
-            dbConfig.connection.Close();
-        }
-
-        private void postPayment() {
-            dbConfig.connection.Open();
-
-            try {
-                for (int i = 0; i < productData.proName.Count; i++) {
-                    var adapter = new SqlDataAdapter();
-
-                    string sql =
-                        $"INSERT INTO Payments " +
-                        $"(payment_method, payment_status) " +
-                        $"VALUES" +
-                        $"(" +
-                        $"'Pay by cash'," +
-                        $"'YES'" +
-                        $")";
-
-                    adapter.InsertCommand = dbConfig.connection.CreateCommand();
-                    adapter.InsertCommand.CommandText = sql;
-                    adapter.InsertCommand.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
-            dbConfig.connection.Close();
-        }
-
-        private void postReq() {
-            dbConfig.connection.Open();
-
-            try {
-                for (int i = 0; i < productData.proName.Count; i++) {
-                    var adapter = new SqlDataAdapter();
-
-                    string sql =
-                        $"INSERT INTO RequestProduct " +
-                        $"(product_id, req_amount, member_id, payment_id, req_price, req_date, req_status) " +
-                        $"VALUES" +
-                        $"(" +
-                        $"'{"product id"}'," +
-                        $"'{productData.amount[i]}'," +
-                        $"'{"member id"}', '{"payment id"}'," +
-                        $"'{productData.proPrice[i] * productData.amount[i]}'," +
-                        $"'{"Date"}', 'YES'" +
-                        $")";
-
-                    adapter.InsertCommand = dbConfig.connection.CreateCommand();
-                    adapter.InsertCommand.CommandText = sql;
-                    adapter.InsertCommand.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex) {
-                Console.WriteLine(ex.Message);
-            }
-            dbConfig.connection.Close();
-        }
+       
 
         private void btnBack_Click(object sender, EventArgs e) {
             var form = new formProductDetail();
@@ -147,6 +70,20 @@ namespace POS_APP {
                 );
             }
             dbConfig.connection.Close();
+        }
+
+        private void btnCash_Click(object sender, EventArgs e) {
+            var form = new formCash();
+            form.Show();
+            this.Hide();
+        }
+
+        private void btnMastercard_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnTransfer_Click(object sender, EventArgs e) {
+
         }
     }
 }

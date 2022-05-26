@@ -59,22 +59,7 @@ namespace POS_APP {
             lblTotalPrice.Text = totalPrice.ToString("#,#.00");
         }
 
-        //private void btnCalcTotal_Click(object sender, EventArgs e) {
-        //    double amount = Convert.ToDouble(txtAmount.Text);
 
-        //    double change = amount - totalPrice;
-            
-        //    // change cannot negative number
-        //    if (change >= 0) {
-        //        txtChange.Text = change.ToString("#,#.00");
-        //        canBuy = true;
-        //    } else {
-        //        MessageBox.Show(
-        //            "Money not enough!",
-        //            "Warning"
-        //        );
-        //    }
-        //}
 
         private void btnConfirm_Click(object sender, EventArgs e) {
                 // GO TO NEW FORM

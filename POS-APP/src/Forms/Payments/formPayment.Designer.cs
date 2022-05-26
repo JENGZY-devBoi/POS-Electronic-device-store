@@ -333,6 +333,7 @@
             this.btnCash.TabIndex = 14;
             this.btnCash.Text = "Cash";
             this.btnCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
             // 
             // btnMastercard
             // 
@@ -345,6 +346,7 @@
             this.btnMastercard.TabIndex = 14;
             this.btnMastercard.Text = "Debit/Master card";
             this.btnMastercard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMastercard.Click += new System.EventHandler(this.btnMastercard_Click);
             // 
             // btnBack
             // 
@@ -370,6 +372,7 @@
             this.btnTransfer.TabIndex = 14;
             this.btnTransfer.Text = "Bank transfer";
             this.btnTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // formPayment
             // 

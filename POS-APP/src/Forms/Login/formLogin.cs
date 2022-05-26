@@ -64,5 +64,9 @@ namespace POS_APP {
             }
             dbConfig.connection.Close();
         }
+
+        private void formLogin_Load(object sender, EventArgs e) {
+            
+        }
     }
 }

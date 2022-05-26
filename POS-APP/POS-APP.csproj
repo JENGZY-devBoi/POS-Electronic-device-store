@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Forms\Cash\formCash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Cash\formCash.Designer.cs">
+      <DependentUpon>formCash.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Class\Member Data\memberData.cs" />
     <Compile Include="src\Forms\Payments\formPayment.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="src\Forms\Cash\formCash.resx">
+      <DependentUpon>formCash.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Home\formHome.resx">
       <DependentUpon>formHome.cs</DependentUpon>
     </EmbeddedResource>
