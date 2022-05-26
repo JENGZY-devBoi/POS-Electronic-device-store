@@ -53,7 +53,10 @@ namespace POS_APP {
                 MessageBox.Show("This member account has locked!", "Error");
                 memberData.clearData();
                 lblName.Text = "Not member";
-            } else {
+            }
+
+            // Status member account is unlocked
+            if (memberData.status == "U") {
                 MessageBox.Show("Access into member account success", "Notification");         
             }
         }
