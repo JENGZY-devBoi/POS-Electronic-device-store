@@ -47,7 +47,15 @@ namespace POS_APP {
             else {
                 fetchMemberData();
             }
-            
+
+            // Status member account is locked
+            if (memberData.status == "L") {
+                MessageBox.Show("This member account has locked!", "Error");
+                memberData.clearData();
+                lblName.Text = "Not member";
+            } else {
+                MessageBox.Show("Access into member account success", "Notification");         
+            }
         }
 
         private void fetchMemberData() {
@@ -64,9 +72,10 @@ namespace POS_APP {
                 DataRow[] dr = tb.Select(sql);
                 lblName.Text = dr[0]["fname"].ToString() + " " + dr[0]["lname"].ToString();
                 memberData.id_pur = dr[0]["member_id"].ToString();
+                memberData.status = dr[0]["member_status"].ToString();
             } catch (Exception ex) {
                 MessageBox.Show(
-                    "Dosen't exist", "Error"
+                    "Member account doesn't exist", "Error"
                 );
             }
             dbConfig.connection.Close();
