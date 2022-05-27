@@ -172,23 +172,20 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.lblProPrice);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.lblProAmount);
             this.panel3.Controls.Add(this.lblProName);
-            this.panel3.Location = new System.Drawing.Point(290, 118);
+            this.panel3.Location = new System.Drawing.Point(290, 156);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(592, 383);
+            this.panel3.Size = new System.Drawing.Size(592, 345);
             this.panel3.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(465, 2);
+            this.label9.Location = new System.Drawing.Point(755, 122);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 31);
             this.label9.TabIndex = 18;
@@ -208,9 +205,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(370, 2);
+            this.label8.Location = new System.Drawing.Point(660, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 31);
             this.label8.TabIndex = 18;
@@ -219,9 +216,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Poppins", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 2);
+            this.label1.Location = new System.Drawing.Point(293, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(146, 31);
             this.label1.TabIndex = 18;
@@ -324,8 +321,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1185, 524);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBack);
@@ -343,6 +343,7 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

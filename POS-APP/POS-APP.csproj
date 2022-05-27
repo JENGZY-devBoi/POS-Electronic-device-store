@@ -56,7 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\Class\Report excel\reportExcel.cs" />
     <Compile Include="src\Forms\Report\formReport.cs">
       <SubType>Form</SubType>
     </Compile>
