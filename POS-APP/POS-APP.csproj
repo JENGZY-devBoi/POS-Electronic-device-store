@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRegister.Designer.cs">
+      <DependentUpon>formRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\Member Management\formMemberManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Forms\Member Management\formMemberManagement.Designer.cs">
+      <DependentUpon>formMemberManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\BankTransfer\formBankTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formRegister.resx">
+      <DependentUpon>formRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\BankTransfer\formBankTransfer.resx">
       <DependentUpon>formBankTransfer.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +133,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="src\Forms\Member Management\formMemberManagement.resx">
+      <DependentUpon>formMemberManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Payments\formPayment.resx">
       <DependentUpon>formPayment.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +155,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\Forms\Register\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

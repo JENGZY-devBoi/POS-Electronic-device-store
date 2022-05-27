@@ -38,18 +38,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panelMemDetail = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnCash = new System.Windows.Forms.Label();
-            this.btnMastercard = new System.Windows.Forms.Label();
-            this.btnBack = new System.Windows.Forms.Label();
             this.btnTransfer = new System.Windows.Forms.Label();
+            this.btnMastercard = new System.Windows.Forms.Label();
+            this.btnCash = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -150,6 +150,7 @@
             this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "log out";
             this.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // panel4
             // 
@@ -230,6 +231,17 @@
             this.panelMemDetail.Size = new System.Drawing.Size(571, 54);
             this.panelMemDetail.TabIndex = 19;
             // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.White;
+            this.lblName.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(93, 14);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(445, 27);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "Not member";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
@@ -253,6 +265,16 @@
             this.panel3.Size = new System.Drawing.Size(272, 156);
             this.panel3.TabIndex = 19;
             // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(8, 43);
+            this.txtPhone.MaxLength = 10;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(247, 31);
+            this.txtPhone.TabIndex = 20;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
+            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.White;
@@ -263,16 +285,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "member phone";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(8, 43);
-            this.txtPhone.MaxLength = 10;
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(247, 31);
-            this.txtPhone.TabIndex = 20;
-            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // btnOK
             // 
@@ -286,17 +298,6 @@
             this.btnOK.Text = "OK";
             this.btnOK.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.White;
-            this.lblName.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(93, 14);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(445, 27);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "Not member";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel5
             // 
@@ -322,18 +323,18 @@
             this.label9.Text = "Payment Method";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnCash
+            // btnTransfer
             // 
-            this.btnCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCash.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCash.Location = new System.Drawing.Point(31, 64);
-            this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(187, 56);
-            this.btnCash.TabIndex = 14;
-            this.btnCash.Text = "Cash";
-            this.btnCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTransfer.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTransfer.Location = new System.Drawing.Point(31, 220);
+            this.btnTransfer.Name = "btnTransfer";
+            this.btnTransfer.Size = new System.Drawing.Size(187, 56);
+            this.btnTransfer.TabIndex = 14;
+            this.btnTransfer.Text = "Bank transfer";
+            this.btnTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // btnMastercard
             // 
@@ -348,6 +349,19 @@
             this.btnMastercard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnMastercard.Click += new System.EventHandler(this.btnMastercard_Click);
             // 
+            // btnCash
+            // 
+            this.btnCash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnCash.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCash.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCash.Location = new System.Drawing.Point(31, 64);
+            this.btnCash.Name = "btnCash";
+            this.btnCash.Size = new System.Drawing.Size(187, 56);
+            this.btnCash.TabIndex = 14;
+            this.btnCash.Text = "Cash";
+            this.btnCash.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCash.Click += new System.EventHandler(this.btnCash_Click);
+            // 
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -360,19 +374,6 @@
             this.btnBack.Text = "< BACK";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
-            // btnTransfer
-            // 
-            this.btnTransfer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnTransfer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTransfer.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTransfer.Location = new System.Drawing.Point(31, 220);
-            this.btnTransfer.Name = "btnTransfer";
-            this.btnTransfer.Size = new System.Drawing.Size(187, 56);
-            this.btnTransfer.TabIndex = 14;
-            this.btnTransfer.Text = "Bank transfer";
-            this.btnTransfer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTransfer.Click += new System.EventHandler(this.btnTransfer_Click);
             // 
             // formPayment
             // 

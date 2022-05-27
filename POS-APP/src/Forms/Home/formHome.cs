@@ -297,6 +297,12 @@ namespace POS_APP {
             }
         }
 
+        private void btnMemManage_Click(object sender, EventArgs e) {
+            var form = new formMemberManagement();
+            form.Show();
+            this.Hide();
+        }
+
         private void fetchCategoryData() {
             try {
                 dbConfig.connection.Open();

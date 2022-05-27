@@ -129,6 +129,7 @@
             this.btnMemManage.TabIndex = 2;
             this.btnMemManage.Text = "Member management";
             this.btnMemManage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMemManage.Click += new System.EventHandler(this.btnMemManage_Click);
             // 
             // btnProPOS
             // 
