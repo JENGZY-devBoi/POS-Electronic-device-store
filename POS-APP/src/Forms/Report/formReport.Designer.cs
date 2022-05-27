@@ -32,13 +32,14 @@
             this.lblEmpID = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Label();
             this.dataGridReport = new System.Windows.Forms.DataGridView();
-            this.btnNetSale = new System.Windows.Forms.Label();
-            this.btnNetProfit = new System.Windows.Forms.Label();
-            this.comboReport = new System.Windows.Forms.ComboBox();
+            this.comboReportDur = new System.Windows.Forms.ComboBox();
             this.dtPick = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnGenReport = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Label();
+            this.lbldate = new System.Windows.Forms.Label();
+            this.comboReportType = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReport)).BeginInit();
@@ -47,10 +48,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnNetProfit);
-            this.panel1.Controls.Add(this.btnNetSale);
+            this.panel1.Controls.Add(this.comboReportDur);
+            this.panel1.Controls.Add(this.comboReportType);
             this.panel1.Controls.Add(this.btnSignIn);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -61,11 +64,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 24);
+            this.label1.Location = new System.Drawing.Point(14, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 36);
+            this.label1.Size = new System.Drawing.Size(80, 36);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Choose report";
+            this.label1.Text = "Report";
             // 
             // panel2
             // 
@@ -146,105 +149,112 @@
             this.dataGridReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.dataGridReport.Location = new System.Drawing.Point(293, 135);
+            this.dataGridReport.Location = new System.Drawing.Point(293, 86);
             this.dataGridReport.Name = "dataGridReport";
-            this.dataGridReport.Size = new System.Drawing.Size(685, 406);
+            this.dataGridReport.Size = new System.Drawing.Size(685, 455);
             this.dataGridReport.TabIndex = 2;
             // 
-            // btnNetSale
+            // comboReportDur
             // 
-            this.btnNetSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnNetSale.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNetSale.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNetSale.Location = new System.Drawing.Point(16, 69);
-            this.btnNetSale.Name = "btnNetSale";
-            this.btnNetSale.Size = new System.Drawing.Size(224, 34);
-            this.btnNetSale.TabIndex = 2;
-            this.btnNetSale.Text = "Net sales report";
-            this.btnNetSale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNetSale.Click += new System.EventHandler(this.btnNetSale_Click);
-            // 
-            // btnNetProfit
-            // 
-            this.btnNetProfit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnNetProfit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNetProfit.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNetProfit.Location = new System.Drawing.Point(16, 123);
-            this.btnNetProfit.Name = "btnNetProfit";
-            this.btnNetProfit.Size = new System.Drawing.Size(224, 34);
-            this.btnNetProfit.TabIndex = 2;
-            this.btnNetProfit.Text = "Net profit report";
-            this.btnNetProfit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNetProfit.Click += new System.EventHandler(this.btnNetProfit_Click);
-            // 
-            // comboReport
-            // 
-            this.comboReport.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboReport.FormattingEnabled = true;
-            this.comboReport.Items.AddRange(new object[] {
+            this.comboReportDur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboReportDur.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboReportDur.FormattingEnabled = true;
+            this.comboReportDur.Items.AddRange(new object[] {
             "Daily",
             "Weekly",
             "Monthly",
             "Yearly"});
-            this.comboReport.Location = new System.Drawing.Point(293, 12);
-            this.comboReport.Name = "comboReport";
-            this.comboReport.Size = new System.Drawing.Size(236, 36);
-            this.comboReport.TabIndex = 3;
-            this.comboReport.Text = "Select report";
-            this.comboReport.SelectedIndexChanged += new System.EventHandler(this.comboReport_SelectedIndexChanged);
+            this.comboReportDur.Location = new System.Drawing.Point(18, 168);
+            this.comboReportDur.Name = "comboReportDur";
+            this.comboReportDur.Size = new System.Drawing.Size(236, 36);
+            this.comboReportDur.TabIndex = 3;
+            this.comboReportDur.SelectedIndexChanged += new System.EventHandler(this.comboReport_SelectedIndexChanged);
             // 
             // dtPick
             // 
             this.dtPick.Font = new System.Drawing.Font("Poppins", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPick.Location = new System.Drawing.Point(293, 81);
+            this.dtPick.Location = new System.Drawing.Point(293, 41);
             this.dtPick.Name = "dtPick";
             this.dtPick.Size = new System.Drawing.Size(236, 39);
             this.dtPick.TabIndex = 4;
             // 
-            // label4
+            // btnGenReport
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(547, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 39);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Report";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGenReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnGenReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenReport.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenReport.Location = new System.Drawing.Point(547, 41);
+            this.btnGenReport.Name = "btnGenReport";
+            this.btnGenReport.Size = new System.Drawing.Size(172, 39);
+            this.btnGenReport.TabIndex = 2;
+            this.btnGenReport.Text = "Show report";
+            this.btnGenReport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnGenReport.Click += new System.EventHandler(this.btnGenReport_Click);
             // 
             // btnExport
             // 
             this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExport.Location = new System.Drawing.Point(806, 79);
+            this.btnExport.Location = new System.Drawing.Point(806, 39);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(172, 39);
             this.btnExport.TabIndex = 2;
             this.btnExport.Text = "Export to excel";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.Location = new System.Drawing.Point(289, 15);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(130, 23);
+            this.lbldate.TabIndex = 2;
+            this.lbldate.Text = "month / day / year";
+            // 
+            // comboReportType
+            // 
+            this.comboReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboReportType.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboReportType.FormattingEnabled = true;
+            this.comboReportType.Items.AddRange(new object[] {
+            "Net Sale",
+            "Net Profit"});
+            this.comboReportType.Location = new System.Drawing.Point(16, 92);
+            this.comboReportType.Name = "comboReportType";
+            this.comboReportType.Size = new System.Drawing.Size(236, 36);
+            this.comboReportType.TabIndex = 3;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(289, 55);
+            this.label5.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 140);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 23);
+            this.label5.Size = new System.Drawing.Size(120, 25);
             this.label5.TabIndex = 2;
-            this.label5.Text = "month / day / year";
+            this.label5.Text = "Report duration";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 25);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Choose report";
             // 
             // formReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 553);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbldate);
             this.Controls.Add(this.dtPick);
-            this.Controls.Add(this.comboReport);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnGenReport);
             this.Controls.Add(this.dataGridReport);
             this.Controls.Add(this.panel1);
             this.Name = "formReport";
@@ -270,13 +280,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEmpID;
         private System.Windows.Forms.Label btnSignIn;
-        private System.Windows.Forms.Label btnNetProfit;
-        private System.Windows.Forms.Label btnNetSale;
         private System.Windows.Forms.DataGridView dataGridReport;
-        private System.Windows.Forms.ComboBox comboReport;
+        private System.Windows.Forms.ComboBox comboReportDur;
         private System.Windows.Forms.DateTimePicker dtPick;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label btnGenReport;
         private System.Windows.Forms.Label btnExport;
+        private System.Windows.Forms.Label lbldate;
+        private System.Windows.Forms.ComboBox comboReportType;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
     }
 }
