@@ -155,6 +155,7 @@
             this.btnAccount.TabIndex = 10;
             this.btnAccount.Text = "Go to account";
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
             // 
             // btnRegister
             // 
