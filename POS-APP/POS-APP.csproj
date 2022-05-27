@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formBankTransfer.cs">
+    <Compile Include="src\Forms\BankTransfer\formBankTransfer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="formBankTransfer.Designer.cs">
+    <Compile Include="src\Forms\BankTransfer\formBankTransfer.Designer.cs">
       <DependentUpon>formBankTransfer.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\Debit Mastercard\formDebit.cs">
@@ -94,7 +94,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formBankTransfer.resx">
+    <EmbeddedResource Include="src\Forms\BankTransfer\formBankTransfer.resx">
       <DependentUpon>formBankTransfer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Cash\formCash.resx">
@@ -137,8 +137,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Forms\BankTransfer\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

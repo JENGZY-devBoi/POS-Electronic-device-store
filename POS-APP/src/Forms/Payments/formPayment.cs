@@ -33,6 +33,7 @@ namespace POS_APP {
        
 
         private void btnBack_Click(object sender, EventArgs e) {
+
             var form = new formProductDetail();
             form.Show();
             this.Hide();
@@ -53,6 +54,7 @@ namespace POS_APP {
                 MessageBox.Show("This member account has locked!", "Error");
                 memberData.clearData();
                 lblName.Text = "Not member";
+                txtPhone.Text = "";
             }
 
             // Status member account is unlocked
