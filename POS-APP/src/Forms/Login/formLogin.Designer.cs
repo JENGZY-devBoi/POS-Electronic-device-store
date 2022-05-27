@@ -63,7 +63,7 @@
             this.btnSignIn.Location = new System.Drawing.Point(92, 291);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Size = new System.Drawing.Size(305, 34);
-            this.btnSignIn.TabIndex = 1;
+            this.btnSignIn.TabIndex = 2;
             this.btnSignIn.Text = "sign in";
             this.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
@@ -84,7 +84,7 @@
             this.txtPassword.Location = new System.Drawing.Point(92, 224);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(305, 31);
-            this.txtPassword.TabIndex = 0;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Text = "123456";
             // 
             // txtUsrename

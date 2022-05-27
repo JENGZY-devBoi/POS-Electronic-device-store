@@ -103,7 +103,7 @@
             this.btnCalcTotal.Location = new System.Drawing.Point(91, 125);
             this.btnCalcTotal.Name = "btnCalcTotal";
             this.btnCalcTotal.Size = new System.Drawing.Size(165, 34);
-            this.btnCalcTotal.TabIndex = 14;
+            this.btnCalcTotal.TabIndex = 1;
             this.btnCalcTotal.Text = "Calculate";
             this.btnCalcTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCalcTotal.Click += new System.EventHandler(this.btnCalcTotal_Click);
@@ -208,7 +208,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(434, 316);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(177, 47);
-            this.btnConfirm.TabIndex = 26;
+            this.btnConfirm.TabIndex = 0;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);

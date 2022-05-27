@@ -44,7 +44,7 @@
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(305, 31);
-            this.txtPhone.TabIndex = 12;
+            this.txtPhone.TabIndex = 0;
             // 
             // label6
             // 
@@ -64,7 +64,7 @@
             this.txtFname.MaxLength = 20;
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(305, 31);
-            this.txtFname.TabIndex = 12;
+            this.txtFname.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,7 +84,7 @@
             this.txtLname.MaxLength = 20;
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(305, 31);
-            this.txtLname.TabIndex = 12;
+            this.txtLname.TabIndex = 2;
             // 
             // label2
             // 
@@ -104,7 +104,7 @@
             this.txtAddr.MaxLength = 20;
             this.txtAddr.Name = "txtAddr";
             this.txtAddr.Size = new System.Drawing.Size(305, 31);
-            this.txtAddr.TabIndex = 12;
+            this.txtAddr.TabIndex = 3;
             // 
             // label3
             // 
@@ -124,7 +124,7 @@
             this.txtEmail.MaxLength = 20;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(305, 31);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 4;
             // 
             // label4
             // 
@@ -145,7 +145,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(275, 470);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(179, 39);
-            this.btnSubmit.TabIndex = 15;
+            this.btnSubmit.TabIndex = 5;
             this.btnSubmit.Text = "submit";
             this.btnSubmit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
