@@ -145,6 +145,7 @@
             // 
             // dataGridReport
             // 
+            this.dataGridReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridReport.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.dataGridReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -202,6 +203,7 @@
             this.btnExport.TabIndex = 2;
             this.btnExport.Text = "Export to excel";
             this.btnExport.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // lbldate
             // 
