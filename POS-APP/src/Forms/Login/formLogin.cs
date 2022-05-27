@@ -39,13 +39,23 @@ namespace POS_APP {
                     empData.emp_id = dr[0]["emp_id"].ToString();
                     empData.emp_fname = dr[0]["fname"].ToString();
                     empData.emp_lname = dr[0]["lname"].ToString();
+                    empData.emp_position = dr[0]["position"].ToString();
+
 
                     dbConfig.connection.Close();
 
                     // GO TO NEW FORM
-                    var formHome = new formHome();
-                    formHome.Show();
-                    this.Hide();
+                    if (empData.emp_position == "manager") {
+                        var form = new formReport();
+                        form.Show();
+                        this.Hide();
+                    }
+
+                    if (empData.emp_position == "saleman") {
+                        var formHome = new formHome();
+                        formHome.Show();
+                        this.Hide();
+                    }
                 }
                 catch (Exception ex) {
                     // Login failed

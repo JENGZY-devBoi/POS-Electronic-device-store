@@ -9,5 +9,6 @@ namespace POS_APP {
         public static string emp_id;
         public static string emp_fname;
         public static string emp_lname;
+        public static string emp_position;
     }
 }
