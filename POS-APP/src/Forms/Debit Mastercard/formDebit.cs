@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 namespace POS_APP {
     public partial class formDebit : Form {
         double totalPrice;
-        string pay = "Pay by ";
+        string pay = "Pay by Mastercard";
 
         public formDebit() {
             InitializeComponent();
@@ -27,7 +27,6 @@ namespace POS_APP {
         }
 
         private void formDebit_Load(object sender, EventArgs e) {
-            comboCardType.SelectedIndex = 0;
             showTotalDetail();
         }
 
@@ -42,24 +41,7 @@ namespace POS_APP {
             lblTotalPrice.Text = totalPrice.ToString("#,#.00");
         }
 
-        private bool validFill() {
-            if (txtIDcard.Text == "" ||
-                txtCVV.Text == "" ||
-                txtExpirMM.Text == "" ||
-                txtExpYY.Text == "" ||
-                txtFname.Text == "" ||
-                txtLname.Text == "") {
-                MessageBox.Show(
-                    "Please complete information", "Warning");
-                return false;
-            }
-            return true;
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e) {
-            if (validFill()) {
-                pay += comboCardType.SelectedItem.ToString();
-
                 putProductDB();
                 postReq();
 
@@ -73,7 +55,6 @@ namespace POS_APP {
                 var form = new formHome();
                 form.Show();
                 this.Hide();
-            }
         }
 
         private void putProductDB() {
