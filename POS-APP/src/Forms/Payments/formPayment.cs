@@ -103,14 +103,5 @@ namespace POS_APP {
             form.Show();
             this.Hide();
         }
-
-        private void btnSignIn_Click(object sender, EventArgs e) {
-            memberData.clearData();
-            productData.clearData();
-
-            var form = new formLogin();
-            form.Show();
-            this.Hide();
-        }
     }
 }

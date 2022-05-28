@@ -30,7 +30,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblEmpID = new System.Windows.Forms.Label();
-            this.btnSignIn = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,7 +62,6 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.btnSignIn);
             this.panel1.Location = new System.Drawing.Point(-1, -5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 535);
@@ -138,19 +136,6 @@
             this.lblEmpID.TabIndex = 2;
             this.lblEmpID.Text = "1";
             this.lblEmpID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnSignIn
-            // 
-            this.btnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSignIn.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignIn.Location = new System.Drawing.Point(14, 384);
-            this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(224, 34);
-            this.btnSignIn.TabIndex = 2;
-            this.btnSignIn.Text = "log out";
-            this.btnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // panel4
             // 
@@ -411,7 +396,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblEmpID;
-        private System.Windows.Forms.Label btnSignIn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label11;
