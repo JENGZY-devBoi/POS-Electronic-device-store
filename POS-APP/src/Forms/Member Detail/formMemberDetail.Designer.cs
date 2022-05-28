@@ -36,7 +36,6 @@
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Label();
-            this.btnTax = new System.Windows.Forms.Label();
             this.btnStatus = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -186,24 +185,12 @@
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnTax
-            // 
-            this.btnTax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnTax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTax.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTax.Location = new System.Drawing.Point(53, 122);
-            this.btnTax.Name = "btnTax";
-            this.btnTax.Size = new System.Drawing.Size(247, 39);
-            this.btnTax.TabIndex = 16;
-            this.btnTax.Text = "Tax invoice";
-            this.btnTax.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // btnStatus
             // 
             this.btnStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnStatus.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStatus.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatus.Location = new System.Drawing.Point(190, 185);
+            this.btnStatus.Location = new System.Drawing.Point(188, 88);
             this.btnStatus.Name = "btnStatus";
             this.btnStatus.Size = new System.Drawing.Size(110, 39);
             this.btnStatus.TabIndex = 16;
@@ -215,7 +202,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(52, 190);
+            this.label5.Location = new System.Drawing.Point(50, 93);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(132, 28);
             this.label5.TabIndex = 26;
@@ -240,7 +227,6 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnStatus);
-            this.Controls.Add(this.btnTax);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
             this.Name = "formMemberDetail";
@@ -266,7 +252,6 @@
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label btnEdit;
         private System.Windows.Forms.Label btnSave;
-        private System.Windows.Forms.Label btnTax;
         private System.Windows.Forms.Label btnStatus;
         private System.Windows.Forms.Label label5;
     }
